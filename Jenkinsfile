@@ -21,10 +21,10 @@ pipeline{
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u owenagboje -p ${dockerhubpwd}'
+                   bat 'docker login -u owenagboje -p ${dockerhubpwd}'
 }
             }
-                   sh 'docker push owenagboje/devops-integration .'
+                   bat 'docker push owenagboje/devops-integration .'
         }
         } 
     }
