@@ -17,16 +17,6 @@ pipeline{
                 }
             }
         }
-        stage('Push Image to Docker Hub'){
-            steps{
-                script{
-                   withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
-                   bat 'docker login -u owenagboje -p ${dockerhubpwd}'
-}
-            }
-                   bat 'docker push owenagboje/devops-integration .'
-        }
-        } 
-    }
+        
    }
 }
